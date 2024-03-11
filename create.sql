@@ -19,7 +19,7 @@ CREATE TABLE Customers (
 	Customer_PK INT PRIMARY KEY AUTO_INCREMENT,
     Customer_ID INT, 
 	Name VARCHAR(70), 
-	PhoneNumber VARCHAR(15), 
+	PhoneNumber VARCHAR(30), 
 	Email VARCHAR(80), 
 	Address VARCHAR(100),
 	City VARCHAR(50), 
@@ -42,7 +42,7 @@ DROP TABLE IF EXISTS Invoices;
 CREATE TABLE Invoices (
     InvoiceNumber INT PRIMARY KEY,
     InvoiceDate DATE,
-    VIN VARCHAR(17) REFERENCES Cars(VIN),
+    Car_ID VARCHAR(17) REFERENCES Cars(Car_ID),
     Customer_PK INT REFERENCES Customers(Customer_PK),
     Staff_PK INT REFERENCES Salespersons(Staff_PK)
     );
